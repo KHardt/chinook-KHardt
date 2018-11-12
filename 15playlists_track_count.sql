@@ -5,7 +5,10 @@ select * from track
 select * from PlaylistTrack
 select * from Playlist
 
-select count() 
-playListId
-from PlaylistTrack
-group by PlaylistId
+select count(pt.trackId),
+p.Name
+from PlaylistTrack pt
+JOIN playlist p on p.playlistId = pt.PlaylistId
+group by pt.PlaylistId
+
+
